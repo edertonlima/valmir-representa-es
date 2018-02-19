@@ -11,6 +11,8 @@ body * {
 	font-family: $font-family;
 	color: $cor-txt;
 	font-weight: $regular;
+	font-size: $font-size;
+	line-height: $font-size+.4;
 }
 
 .container {
@@ -191,7 +193,7 @@ body * {
 	}
 
 	&.border {
-		border: 1px solid $cinza2;
+		border: 1px solid $borda;
 		border-width: 1px 0;
 	}
 

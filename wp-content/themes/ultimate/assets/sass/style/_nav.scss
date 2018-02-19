@@ -1,9 +1,83 @@
+.header__navigation {
+    width: calc(80% - $wLogo);
+    margin-left: $wLogo;
+    margin-top: 0px;
+    height: 60px;
+    position: relative;
+
+	.navbar-collapse {
+		padding: 0;
+		display: block;
+		height: auto;
+		overflow: visible;
+		width: 100%;
+		border-top: 0;
+		box-shadow: none;
+
+		position: absolute;
+		top: 0;
+		height: 60px;
+		@include clear;
+	}
+}
+
+.main-navigation {
+	padding-left: 40px;
+	height: 100%;
+
+	li {
+		display: inline-block;
+		position: relative;
+		height: 100%;
+
+		a {
+			color: #ffffff;
+			padding: 18px 20px;
+			display: block;
+
+			&:before {
+				position: absolute;
+				content: "";
+				width: 4px;
+				height: 4px;
+				right: -2px;
+				top: calc(50% - 2px);
+				border-radius: 50%;
+				background: rgba(250,250,250,0.2);
+			}	
+		}
+
+		&.active {
+			a {
+				&:after {
+					position: absolute;
+					content: "";
+					width: calc(100% - 30px);
+					height: 5px;
+					left: 15px;
+					bottom: 0;
+					background-color: #e21f2f;
+				}
+			}
+		}
+
+		&:last-child {
+			a {
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
 .nav {
 	width: auto;
 	right: 40px;
 	bottom: 13px;
 	position: absolute;
 	z-index: 9999;
+	display: none;
 
 	ul {
 

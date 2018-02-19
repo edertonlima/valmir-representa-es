@@ -3,17 +3,22 @@ strong {
 }
 
 h1 {
+	display: table;
 	padding: 0;
 	float: left;
-	width: 240px;
-	height: 129px;
-	background: url('../images/bg_logo.png') repeat-x 0 0;
+	width: $wLogo;
+	height: 120px;
+	background-color: #ffffff;
+	position: relative;
 	@include animacao;
 
 	a {
+		display: table-cell;
+		vertical-align: middle;
+
 		img {
 			width: 85%;
-			margin: 30px auto;
+			margin: 0px auto;
 			display: block;
 			@include animacao;
 		}
@@ -23,6 +28,22 @@ h1 {
 				opacity: .8;
 			}
 		}
+	}
+
+	&:after {
+		position: absolute;
+		content: "";
+		z-index: -1;
+		height: 43px;
+		width: 43px;
+		background-color: #ffffff;
+		-webkit-transform: rotate(135deg);
+		-ms-transform: rotate(135deg);
+		transform: rotate(135deg);
+		bottom: 9px;
+		right: -22px;
+		background-color: #ffffff;
+		z-index: 0;
 	}
 
 	@media all and (max-width: 1100px) {
@@ -186,55 +207,6 @@ a {
 	i {
 		@include animacao;
 	}
-
-	&.leia-mais {
-		float: left;
-		color: $amarelo;
-		line-height: 30px;
-		text-decoration: none;
-		@include animacao;
-
-		i {
-			display: inline-block;
-			margin-right: 3px;
-			color: $amarelo;
-		}
-
-		&:hover {
-			text-decoration: none!important;
-			color: darken($amarelo, 20%);
-
-			i {
-				color: darken($amarelo, 20%);
-			}
-		}
-	}
-
-	&.mais-item {
-		float: right;
-		color: $azul;
-		font-size: $font-size;
-		margin: 0px;
-
-		i {
-			color: $azul;
-			font-size: $font-size;
-			padding-right: 5px;
-
-			&.fa-long-arrow-right, &.fa-long-arrow-left {
-				display: block;
-				font-size: 2rem;
-			}
-		}
-
-		&:hover {
-			color: $amarelo;
-
-			i {
-				color: $amarelo;
-			}
-		}
-	}
 	
 	&:hover {
 		text-decoration: none!important;
@@ -251,10 +223,6 @@ a {
 
 .azul {
 	color: $azul!important;
-}
-
-.azul-petroleo {
-	color: $azul-petroleo!important;
 }
 
 .table {

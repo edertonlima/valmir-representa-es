@@ -101,7 +101,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" media="screen" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />
+<!--<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />-->
 
 <?php /*if(is_single('minha-area')){ ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/jquery.dataTables.min.css" type="text/css" media="screen" />
@@ -199,7 +199,16 @@
 	<?php } ?>
 	<!-- ANALYTICS -->
 
-	<header class="header">
+	<div class="top-header">
+		<div class="container">
+			<div class="menu-top-menu">
+				<a href="javascript:" class="destaque">Meus Pedido</a>
+				<a href="javascript:">Entrar</a>
+			</div>	
+		</div>
+	</div>
+
+	<header class="header">		
 		<div class="container">
 
 			<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
@@ -267,8 +276,40 @@
 				</ul>
 			</nav>
 
+			<div class="info-header">
+				<div class="item-info-header">
+					<i class="fa  fa-headphones"></i>
+					<span class="title">Fale Conosco</span>
+					<span class="subtitle">+55 53 0123-4567</span>
+				</div>
+
+				<div class="item-info-header">
+					<i class="fa  fa-clock-o"></i>
+					<span class="title">Atendimento</span>
+					<span class="subtitle">08:00 - 18:00</span>
+				</div>
+
+				<div class="item-info-header">
+					<i class="fa  fa-envelope-o"></i>
+					<span class="title">Escreva-nos</span>
+					<span class="subtitle">contato@valdemir.com.br</span>
+				</div>
+			</div>
+
+			<div class="header__navigation  js-sticky-offset">
+				<nav class="collapse  navbar-collapse" role="navigation" aria-label="Main Menu" id="cargopress-navbar-collapse">
+					<ul id="menu-main-menu" class="main-navigation  js-main-nav  js-dropdown" role="menubar">
+						<li class="active"><a href="javascript:">Home</a></li>
+						<li class=""><a href="javascript:">Quem Somos</a></li>
+						<li class=""><a href="javascript:">Produtos</a></li>
+						<li class=""><a href="javascript:">Fale Conosco</a></li>
+					</ul>
+				</nav>
+			</div>
+
 		</div>
 
+		<?php /*
 		<dib class="box-busca">
 			<div class="link">
 				<a href="<?php echo get_home_url(); ?>" title="Página inicial">Página inicial</a>
@@ -302,7 +343,7 @@
 					?>
 				</div>
 			</a>
-		</dib>
+		</dib> */?>
 	</header>
 
 <?php

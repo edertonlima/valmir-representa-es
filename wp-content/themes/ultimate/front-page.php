@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- slide -->
-<section class="box-content box-slide">
+<section class="box-content box-slide" style="display: none;">
 	<div class="container">
 		<div class="slide">
 			<div class="carousel slide" data-ride="carousel" data-interval="6000" id="slide">
@@ -15,8 +15,10 @@
 							if(get_sub_field('imagem')){
 								$slide = $slide+1; ?>
 
-								<div class="item <?php if($slide == 1){ echo 'active'; } ?>" style="background-image: url('');">
-									<img src="<?php the_sub_field('imagem'); ?>">
+								<div class="item <?php if($slide == 1){ echo 'active'; } ?>" style="background-image: url('<?php the_sub_field('imagem'); ?>');">
+									<h2><?php the_sub_field('titulo'); ?></h2>
+									<p><?php the_sub_field('texto'); ?></p>
+									<a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('titulo_url'); ?></a>
 								</div>
 
 							<?php }
@@ -39,6 +41,7 @@
 	</div>
 </section>
 
+<?php /*
 <section class="box-content">
 	<div class="container">
 

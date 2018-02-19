@@ -70,145 +70,6 @@ button, input[type='submit'], .btn {
 	&:hover {
 		background-color: darken($vermelho, 10%);
 	}
-
-	&.btn-slide {
-		line-height: 75px;
-		height: 75px;
-		background-color: $amarelo;
-		border: none;
-		padding: 0 90px;
-		color: #ffffff;
-
-		&:hover {
-			background-color: darken($amarelo, 10%);
-		}
-	}
-
-	&.enviar {
-		width: 100%;
-		background-color: $amarelo;
-		color: #fff;
-		border: none;
-		font-weight: $regular;
-
-		&:hover {
-			background-color: darken($amarelo, 10%);
-		}
-	}
-
-	&.ver-mais {
-		width: 70%;
-		max-width: 370px;
-		line-height: 100px;
-		height: 100px;
-		display: block;
-		padding: 0;
-		background-color: #ffffff;
-		border-color: $azul;
-		color: $azul;
-		font-weight: $regular;
-		margin: -50px auto 120px;
-
-		&:hover {
-			background-color: $azul;
-			color: #ffffff;
-		}
-	}
-
-	&.leia-mais {
-		width: auto;
-		display: block;
-		font-weight: $bold;
-		padding: 0;
-		background-color: #ffffff;
-		border-color: $azul-escuro;
-		color: $azul-escuro;
-		margin: 25px 0 0;
-		border-radius: 0;
-		width: 140px;
-		float: none;
-		line-height: 50px;
-		height: 50px;
-		font-size: 1rem;
-		text-transform: none;
-
-		&:hover {
-			background-color: $azul;
-			color: #ffffff;
-		}
-	}
-
-
-	&.orcamento {
-		width: auto;
-		display: inline-block;
-		font-weight: $bold;
-		padding: 0;
-		background-color: $vermelho;
-		border-color: $vermelho;
-		color: #ffffff;
-		margin: 30px 0 0;
-		border-radius: 0;
-		float: none;
-		padding: 0 20px;
-		line-height: 50px;
-		height: 50px;
-		font-size: 1rem;
-		text-transform: none;
-
-		i {
-			color: #ffffff;
-			margin-right: 2px;
-		}
-
-		&.off {
-			cursor: no-drop;
-			opacity: .6;
-
-			&:hover {
-				background-color: $vermelho;
-			}
-		}
-	}
-
-	&.pedido {
-		color: $azul;
-
-		i {
-			color: $azul;
-		}
-
-		&:hover {
-			color: #fff;
-
-			i {
-				color: #fff;
-			}
-		}
-	}
-
-	&.print {
-		width: auto;
-		float: right;
-		height: auto;
-		border: navajowhite;
-		padding: 0;
-		margin: 0 0 0 15px;
-		border-radius: 0;
-
-		i {
-			color: #000000;
-			@include animacao;
-		}
-
-		&:hover {
-			background-color: transparent;
-
-			i {
-				color: $amarelo;
-			}
-		}
-	}
 }
 
 input[type='file']{
@@ -276,7 +137,7 @@ fieldset {
 	margin-top: 10px;
 
 	.info-campo {
-		color: $amarelo;
+		color: $vermelho;
 		margin-bottom: 10px;
 	}
 
@@ -290,22 +151,22 @@ fieldset {
 
 	&.erro {
 		input, textarea {
-			border-color: $amarelo;
+			border-color: $vermelho;
 
 			&::-webkit-input-placeholder {
-				color: $amarelo;
+				color: $vermelho;
 			}
 
 			&:-moz-placeholder {
-				color: $amarelo; 
+				color: $vermelho; 
 			}
 
 			&::-moz-placeholder {
-				color: $amarelo;
+				color: $vermelho;
 			}
 
 			&:-ms-input-placeholder {  
-				color: $amarelo;
+				color: $vermelho;
 			}
 		}
 	}
@@ -353,5 +214,5 @@ fieldset {
 	text-align: center;
 	font-size: 1rem;
 	margin: 0px 0 20px !important;
-	color: $amarelo;
+	color: $vermelho;
 }
