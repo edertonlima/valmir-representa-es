@@ -1,0 +1,156 @@
+.header {
+	width: 100%;
+	height: 129px;
+	background: url('../images/bg_header.png') repeat-x 0 0;
+	position: relative;
+	/*margin-bottom: 10px;
+	background-color: #f1f2f2;*/
+	@include clear;
+
+	/*&:after {
+		display: block;
+		height: 10px;
+		width: 100%;
+		background-color: #f1f2f2;
+	}*/
+
+	.container {
+		height: 129px;
+	}
+
+	.box-busca {
+		background: url("../images/bg_busca.png") no-repeat left top;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 40px;
+		width: 50%;
+
+		.link {
+			display: inline-block;
+			margin: 7px 0 0 53px;
+
+			a, span {
+				display: inline-block;
+				padding: 0 5px;
+				font-size: .8rem;
+			}
+
+			a:hover {
+				color: $amarelo;
+			}
+		}
+
+		.busca-header {
+			clear: none;
+			display: inline-block;
+			width: 175px;
+			margin: 3px 0 0 46px;
+
+			input {
+				width: 130px;
+				height: 25px;
+				border: 0;
+				padding: 0;
+				border-radius: 0;
+				font-size: .7rem;
+				font-weight: 500;
+				line-height: 30px;
+				margin: 0;
+				background: transparent;
+			}
+
+			button {
+				background: transparent;
+				border: 0;
+				padding: 0;
+				border-radius: 0;
+				font-size: .8rem;
+				color: $cor-txt;
+				font-weight: $bold;
+				line-height: 30px;
+				margin: 0 0 0 15px;
+				height: auto;
+				width: auto;
+				letter-spacing: 1px;
+			}
+		}
+
+		.cart-orcamento {
+			display: inline-block;
+			margin-left: 15px;
+			position: relative;
+
+			i {
+				font-size: 1.4rem;
+				position: relative;
+				top: 3px;
+				color: $cor-txt;
+			}
+
+			span {
+				font-size: .5rem;
+				position: absolute;
+				background-color: $laranja;
+				border-radius: 50%;
+				color: $cor-txt;
+				width: 20px;
+				height: 20px;
+				display: block;
+				text-align: center;
+				line-height: 20px;
+				right: -14px;
+				top: -1px;
+			}
+
+			&:hover {
+				i {
+					color: darken($laranja, 5%);
+				}
+			}
+		}
+
+		@media all and (max-width: 1000px) {
+			width: 60%;
+		}
+
+		@media all and (max-width: 800px) {
+			width: 70%;
+		}
+
+		@media all and (max-width: 670px) {
+			display: none;
+			position: absolute;
+			z-index: 9999;
+			width: 100%;
+			background-position: -178px 0px;
+
+			.link {
+				display: none;
+			}
+
+			.busca-header {
+				margin-left: 105px;
+			}
+		}
+
+		&.active {
+			display: block;
+
+			@media all and (max-width: 850px) {
+				position: absolute;
+				z-index: 9999;
+				width: 100%;
+				background-position: -178px 0px;
+
+				.link {
+					display: none;
+				}
+
+				.busca-header {
+					margin-left: 105px;
+				}
+			}
+		}
+	}
+}

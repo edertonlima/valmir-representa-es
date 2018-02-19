@@ -1,0 +1,287 @@
+.nav {
+	width: auto;
+	right: 40px;
+	bottom: 13px;
+	position: absolute;
+	z-index: 9999;
+
+	ul {
+
+		li {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			height: 45px;
+			background: url('../images/bg_menu_hover.png') no-repeat center 45px;
+			@include animacao();
+
+			a {
+				margin-left: -4px;
+				display: block;
+				font-size: .875rem;
+				color: #ffffff;
+				font-weight: $bold;
+				padding: 0px 7px;
+				text-decoration: none;
+				text-shadow: 1px 1px 1px #000000;
+			}
+
+			&.menu-minha-area {
+				display: none;
+			}
+
+			&:hover {
+
+				> a {
+					opacity: .5;
+				}
+
+				> ul {
+					display: block!important;
+					visibility: visible!important;
+				}
+			}
+
+			&:first-child {
+				a {
+					margin-left: 0;
+					border: none;
+				}
+			}
+
+
+			ul {
+				display: none;
+				left: 0;
+				top: 44px;
+				z-index: 99999;
+				background-color: #282829;
+				position: absolute;
+				width: 320px;
+				margin-left: -4px;
+				padding: 10px 20px 20px;
+
+				li {
+					display: block;
+					line-height: 30px;
+					height: auto;
+
+					a {
+						display: inline-block;
+						margin-left: 0px;
+						line-height: 30px;
+						color: #ffffff;
+						//border-bottom: 1px solid $vermelho;
+					}
+
+					&:hover {
+						> a {
+							opacity: .5;
+						}
+					}
+				}
+
+				&.submenu-sub {
+					display: none;
+					margin-left: 60px;
+
+					a {
+						padding: 0 15px;
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 850px){
+		height: 100vh;
+		position: fixed;
+		display: table;
+		width: 100%;
+		margin: 0;
+		left: 0;
+		top: -110vh;
+		z-index: 9999;
+		background-color: $amarelo;
+
+		ul {
+			vertical-align: middle;
+			display: table-cell;
+
+			li {
+				float: right;
+				margin: 5px 0;
+				padding-right: 150px;
+				display: block;
+				@include clear;
+				text-align: right;
+
+				a {
+					color: #ffffff;
+					font-size: 2.5rem;
+					font-weight: $bold;
+					border: none;
+					text-shadow: none;
+
+					&:hover {
+						color: #ffffff;
+						opacity: .8;
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 600px){
+		ul {
+			li {
+				padding-right: 25px;
+			}
+		}
+	}
+
+	@media all and (max-width: 500px){
+		ul {
+			li {
+				padding-right: 60px;
+				
+				a {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+
+.header {
+	&.active {
+		.nav {
+			ul {
+				li {
+					&.menu-minha-area {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* menu mobile */
+.menu-mobile {
+	display: none;
+	float: right;
+	width: 40px;
+	height: 30px;
+	margin-top: 42px;
+	text-decoration: none;
+	position: relative;
+	z-index: 99999;
+
+	@media all and (max-width: 850px) {
+		display: block;
+		margin-top: 55px;
+	}
+
+	@media all and (max-width: 1100px) {
+		
+	}
+
+	span {
+		display: block;
+
+		em {
+			font-style: normal;
+			color: #6a6c74;
+			font-size: 3rem;
+			line-height: 2rem;
+			display: block;
+			text-decoration: none;
+			margin-top: -2px;
+			@include animacao();
+
+			&:hover {
+				color: $vermelho;
+			}
+		}
+	}
+
+	&.active {
+		text-align: center;
+		margin-top: 50px;
+		position: fixed;
+		right: 55px;
+
+		span {
+			em {
+				color: #ffffff;
+				text-decoration: none;
+			}
+		}
+
+		@media all and (max-width: 600px){
+			top: 25px;
+			right: 38px !important;
+		}
+	}
+
+	&:not(.active){
+		span {
+			position: relative;
+
+			em {
+				display: none;
+			}
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+			}
+
+			&:before {
+				top: 11px;
+			}
+
+			&:after {
+				top: 22px;
+			}
+		}
+
+		span, span:before, span:after {
+			background-color: #ffffff;
+			height: 5px;
+			width: 40px;
+			@include animacao();
+		}
+
+		&:hover {
+
+			span, span:before, span:after {
+				background-color: $amarelo;
+			}
+		}
+	}
+}
+
+@mixin menu-active {
+	background-position: center 31px;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+body {
+
+	.nav ul li.active {
+		@include menu-active;
+	}
+
+	&.post-type-archive-produtos, &.single-produtos, &.tax-produtos_taxonomy {
+		.nav ul li.menu-produtos {
+			@include menu-active;
+		}
+	}
+}

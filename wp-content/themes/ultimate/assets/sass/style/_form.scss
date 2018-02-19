@@ -1,0 +1,357 @@
+input:not([type='submit']), textarea {
+	width: 100%;
+	margin-bottom: 5px;
+	line-height: 50px;
+	color: $cinza-escuro;
+	font-weight: $regular;
+	font-size: 1.125rem;
+	display: inline-block;
+	background-color: #ffffff;
+	border-radius: 5px;
+	border: 1px solid $cinza-escuro;
+	@include animacao;
+
+	&::-webkit-input-placeholder {
+	   color: $cinza-escuro;
+	   opacity: 1;
+	}
+
+	&:-moz-placeholder {
+	   color: $cinza-escuro; 
+	   opacity: 1;
+	}
+
+	&::-moz-placeholder {
+	   color: $cinza-escuro;
+	   opacity: 1;
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $cinza-escuro;
+	   opacity: 1;
+	}
+}
+
+input:not([type='submit']) {
+	height: 50px;
+	line-height: 50px;
+	padding: 0 15px;
+}
+
+textarea {
+	padding: 15px;
+	height: 150px;
+	line-height: 1.5rem;
+}
+
+button, input[type='submit'], .btn {
+	width: auto;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 35px;
+	color: $azul-escuro;
+	font-weight: $bold;
+	font-size: 1.225rem;
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border: 1px solid $azul-escuro;
+	cursor: pointer;
+	text-transform: uppercase;
+	border-radius: 5px;
+	@include animacao;
+
+	.fa {
+		font-size: 1.187rem;
+		color: #ffffff;
+	}	
+
+	&:hover {
+		background-color: darken($vermelho, 10%);
+	}
+
+	&.btn-slide {
+		line-height: 75px;
+		height: 75px;
+		background-color: $amarelo;
+		border: none;
+		padding: 0 90px;
+		color: #ffffff;
+
+		&:hover {
+			background-color: darken($amarelo, 10%);
+		}
+	}
+
+	&.enviar {
+		width: 100%;
+		background-color: $amarelo;
+		color: #fff;
+		border: none;
+		font-weight: $regular;
+
+		&:hover {
+			background-color: darken($amarelo, 10%);
+		}
+	}
+
+	&.ver-mais {
+		width: 70%;
+		max-width: 370px;
+		line-height: 100px;
+		height: 100px;
+		display: block;
+		padding: 0;
+		background-color: #ffffff;
+		border-color: $azul;
+		color: $azul;
+		font-weight: $regular;
+		margin: -50px auto 120px;
+
+		&:hover {
+			background-color: $azul;
+			color: #ffffff;
+		}
+	}
+
+	&.leia-mais {
+		width: auto;
+		display: block;
+		font-weight: $bold;
+		padding: 0;
+		background-color: #ffffff;
+		border-color: $azul-escuro;
+		color: $azul-escuro;
+		margin: 25px 0 0;
+		border-radius: 0;
+		width: 140px;
+		float: none;
+		line-height: 50px;
+		height: 50px;
+		font-size: 1rem;
+		text-transform: none;
+
+		&:hover {
+			background-color: $azul;
+			color: #ffffff;
+		}
+	}
+
+
+	&.orcamento {
+		width: auto;
+		display: inline-block;
+		font-weight: $bold;
+		padding: 0;
+		background-color: $vermelho;
+		border-color: $vermelho;
+		color: #ffffff;
+		margin: 30px 0 0;
+		border-radius: 0;
+		float: none;
+		padding: 0 20px;
+		line-height: 50px;
+		height: 50px;
+		font-size: 1rem;
+		text-transform: none;
+
+		i {
+			color: #ffffff;
+			margin-right: 2px;
+		}
+
+		&.off {
+			cursor: no-drop;
+			opacity: .6;
+
+			&:hover {
+				background-color: $vermelho;
+			}
+		}
+	}
+
+	&.pedido {
+		color: $azul;
+
+		i {
+			color: $azul;
+		}
+
+		&:hover {
+			color: #fff;
+
+			i {
+				color: #fff;
+			}
+		}
+	}
+
+	&.print {
+		width: auto;
+		float: right;
+		height: auto;
+		border: navajowhite;
+		padding: 0;
+		margin: 0 0 0 15px;
+		border-radius: 0;
+
+		i {
+			color: #000000;
+			@include animacao;
+		}
+
+		&:hover {
+			background-color: transparent;
+
+			i {
+				color: $amarelo;
+			}
+		}
+	}
+}
+
+input[type='file']{
+	font-size: .8rem;
+	height: auto;
+	line-height: normal;
+	padding: 15px;
+}
+
+.input-radio, .input-checkbox {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+
+	&.center {
+		text-align: center;
+	}
+
+	label {
+		margin-right: 2px;
+		margin-left: 40px;
+		color: $azul;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	input[type="radio"], input[type="checkbox"]{
+		height: auto;
+		line-height: normal;
+		width: auto;
+		position: relative;
+		top: 1px;
+	}
+}
+
+label {
+	cursor: pointer;
+
+	&.titulo {
+		margin: 30px 0 0 0px;
+		color: $azul;
+		width: 100%;
+		cursor: default;
+		@include clear;
+	}
+}
+
+form {
+	margin: 0px auto;
+	width: 90%;
+	@include clear();
+
+	&.form-padrao {
+		width: 100%;
+	}
+
+	input, textarea {
+		max-width: 100%;
+	}
+}
+
+fieldset {
+	margin-top: 10px;
+
+	.info-campo {
+		color: $amarelo;
+		margin-bottom: 10px;
+	}
+
+	&.center {
+		text-align: center;
+	}
+
+	&:first-child {
+		margin: 0;
+	}
+
+	&.erro {
+		input, textarea {
+			border-color: $amarelo;
+
+			&::-webkit-input-placeholder {
+				color: $amarelo;
+			}
+
+			&:-moz-placeholder {
+				color: $amarelo; 
+			}
+
+			&::-moz-placeholder {
+				color: $amarelo;
+			}
+
+			&:-ms-input-placeholder {  
+				color: $amarelo;
+			}
+		}
+	}
+}
+
+.select {
+	overflow: hidden;
+	background-color: $cinza-escuro;
+	line-height: 44px;
+	height: 40px;
+	padding: 0 0 0 10px;
+	margin-bottom: 20px;
+	display: block;
+	position: relative;
+	@include box-sizing();
+
+	select {
+		width: 88%;
+		padding-right: 135px;
+		background-color: transparent;
+		font-weight: $regular;
+		font-size: .875rem;
+		color: #ffffff;
+		box-sizing: content-box;
+		position: relative;
+		z-index: 99;
+		cursor: pointer;
+	}
+
+	&:after {
+		content: "\f107";
+		color: #ffffff;
+		position: absolute;
+		right: 13px;
+		top: 13px;
+		font: normal normal normal 30px/1 FontAwesome;
+		cursor: pointer;
+		height: 15px;
+		line-height: 15px;
+		z-index: 0;
+	}
+}
+
+.msg-form {
+	text-align: center;
+	font-size: 1rem;
+	margin: 0px 0 20px !important;
+	color: $amarelo;
+}

@@ -1,0 +1,156 @@
+.slide {
+	//height: $hSlide;
+	position: relative;
+
+	.item {
+		width: 100%;
+		//height: $hSlide;
+		background-position: center;
+		background-size: cover;
+		line-height: $hSlide;
+
+		.box-height {
+			display: table;
+			width: 100%;
+			height: $hSlide;
+			line-height: $hSlide;
+		}
+
+		.box-texto {
+			display: table-cell;
+			vertical-align: middle;
+
+			img {
+				display: block;
+				max-width: 130px;
+				margin: 0 auto;
+			}
+
+			p {
+				color: #ffffff;
+				display: block;
+				padding: 0px;
+				width: 100%;
+				max-width: $width;
+				margin: 0;
+				font-weight: $light;
+
+				strong {
+					color: #ffffff;
+				}
+
+				&.texto {
+					font-size: 3.125rem;
+					line-height: 3.78rem;
+					font-weight: $light;
+					display: table;
+
+					span {
+						display: table-cell;
+						vertical-align: middle;
+					}
+
+					.txt-slide {
+						color: #ffffff;
+						font-weight: $light;
+					}
+
+					.box-btn {
+						padding: 0 20px 0 180px;
+
+						span {
+							display: block;
+							min-width: 200px;
+						}
+					}
+				}
+
+				@media all and (max-width: 750px){
+					&.texto {
+						font-size: 1.5625rem;
+						line-height: 1.5625rem;
+					}
+				}
+			}
+		}
+	}
+
+	.controle-slide {
+		position: absolute;
+		top: 50%;
+		margin-top: -23px;
+		width: 100%;
+		z-index: 89;
+		display: none;
+
+		a {
+			height: 46px;
+			width: 25px;
+			position: relative;
+			z-index: 95;
+			@include animacao;
+
+			&:hover {
+				opacity: .5;
+			}
+
+			&.left {
+				left: 10%;
+				float: left;
+				background-image: url('../images/seta-slide-left.png');
+			}
+
+			&.right {
+				float: right;
+				right: 10%;
+				background-image: url('../images/seta-slide-right.png');
+			}
+
+			@media all and (max-width: 1300px){
+				&.left {
+					left: 5%;
+				}
+
+				&.right {
+					right: 5%;
+				}
+			}
+
+		}
+	}
+
+	.carousel-indicators {
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		width: 100%;
+		display: inline-block;
+		margin: 0;
+		padding: 10px 0;
+
+		li {
+			width: 18px;
+			height: 18px;
+			display: inline-block;
+			margin: 0 5px;
+			border: none;
+			border: 3px solid #ffffff;;
+			border-radius: 50%;
+			opacity: .8;
+			background-color: transparent;
+			@include animacao();
+
+			&.active {
+				opacity: 1;
+				border-color: $amarelo;
+			}
+		}
+	}
+}
+
+#goScroll {
+	position: absolute;
+	bottom: 20px;
+	margin-left: -33px;
+	left: 50%;
+}
