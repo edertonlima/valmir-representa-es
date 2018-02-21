@@ -1,77 +1,46 @@
 .slide {
-	//height: $hSlide;
+	height: $hSlide;
 	position: relative;
+
+	.mask-slide {
+		background-color: rgba($azul-escuro,.6);
+	}
 
 	.item {
 		width: 100%;
-		//height: $hSlide;
+		height: $hSlide;
 		background-position: center;
 		background-size: cover;
 		line-height: $hSlide;
 
-		.box-height {
-			display: table;
-			width: 100%;
-			height: $hSlide;
-			line-height: $hSlide;
+		h2, p {
+			color: #ffffff;
+			display: block;
+			width: 70%;
+			text-shadow: 1px 1px 1px #000;
 		}
 
-		.box-texto {
+		h2 {
+			font-weight: $bold-extra;
+			margin-top: -100px;
+		}
+
+		p {
+			font-family: $raleway;
+			font-size: 1.125rem;
+			line-height: 1.5rem;
+			margin-top: 20px;
+		}
+		
+	}
+
+	.container {
+		height: $hSlide;
+		display: table;
+
+		.container-slide {
 			display: table-cell;
 			vertical-align: middle;
-
-			img {
-				display: block;
-				max-width: 130px;
-				margin: 0 auto;
-			}
-
-			p {
-				color: #ffffff;
-				display: block;
-				padding: 0px;
-				width: 100%;
-				max-width: $width;
-				margin: 0;
-				font-weight: $light;
-
-				strong {
-					color: #ffffff;
-				}
-
-				&.texto {
-					font-size: 3.125rem;
-					line-height: 3.78rem;
-					font-weight: $light;
-					display: table;
-
-					span {
-						display: table-cell;
-						vertical-align: middle;
-					}
-
-					.txt-slide {
-						color: #ffffff;
-						font-weight: $light;
-					}
-
-					.box-btn {
-						padding: 0 20px 0 180px;
-
-						span {
-							display: block;
-							min-width: 200px;
-						}
-					}
-				}
-
-				@media all and (max-width: 750px){
-					&.texto {
-						font-size: 1.5625rem;
-						line-height: 1.5625rem;
-					}
-				}
-			}
 		}
 	}
 
@@ -117,11 +86,15 @@
 			}
 
 		}
+
+		.active {
+
+		}
 	}
 
 	.carousel-indicators {
 		position: absolute;
-		bottom: 0px;
+		bottom: 100px;
 		left: 0;
 		width: 100%;
 		display: inline-block;
@@ -142,7 +115,7 @@
 
 			&.active {
 				opacity: 1;
-				border-color: $amarelo;
+				border-color: $vermelho;
 			}
 		}
 	}

@@ -101,7 +101,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" media="screen" />
-<!--<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />-->
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />
 
 <?php /*if(is_single('minha-area')){ ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/jquery.dataTables.min.css" type="text/css" media="screen" />
@@ -280,7 +280,7 @@
 				<div class="item-info-header">
 					<i class="fa  fa-headphones"></i>
 					<span class="title">Fale Conosco</span>
-					<span class="subtitle">+55 53 0123-4567</span>
+					<span class="subtitle">+55 47 3344-1697</span>
 				</div>
 
 				<div class="item-info-header">
@@ -292,18 +292,58 @@
 				<div class="item-info-header">
 					<i class="fa  fa-envelope-o"></i>
 					<span class="title">Escreva-nos</span>
-					<span class="subtitle">contato@valdemir.com.br</span>
+					<span class="subtitle">valdeir.repres@hotmail.com</span>
 				</div>
 			</div>
 
 			<div class="header__navigation  js-sticky-offset">
 				<nav class="collapse  navbar-collapse" role="navigation" aria-label="Main Menu" id="cargopress-navbar-collapse">
 					<ul id="menu-main-menu" class="main-navigation  js-main-nav  js-dropdown" role="menubar">
-						<li class="active"><a href="javascript:">Home</a></li>
-						<li class=""><a href="javascript:">Quem Somos</a></li>
-						<li class=""><a href="javascript:">Produtos</a></li>
-						<li class=""><a href="javascript:">Fale Conosco</a></li>
+						<li class="<?php if(is_front_page()){ echo 'active'; } ?>"><a href="<?php echo get_home_url(); ?>">Home</a></li>
+						<li class="<?php if(is_page(array( 'quem-somos'))){ echo 'active'; } ?>">
+							<a href="<?php echo get_home_url(); ?>/quem-somos">Quem Somos <i class="fa fa-sort-desc"></i></a>
+							<ul>
+
+								<?php
+									$my_wp_query = new WP_Query();
+									$all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
+									$paginas = get_page_children( get_page_by_path('quem-somos')->ID, $all_wp_pages );
+
+									$cont_page = 0;
+									foreach ($paginas as $key => $pagina) { ?>
+
+										<li><a href="<?php echo get_permalink($pagina->ID); ?>" title="<?php echo $pagina->post_title; ?>"><?php echo $pagina->post_title; ?></a></li>
+
+									<?php }
+								?>
+
+							</ul>
+						</li>
+						<li class="">
+							<a href="<?php echo get_home_url(); ?>/produtos">Produtos <i class="fa fa-sort-desc"></i></a>
+							<ul>
+								<li><a href="javascript:" class="link-footer">Pescados Nacionais</a></li>
+								<li><a href="javascript:" class="link-footer">Pescados Importados</a></li>
+								<li><a href="javascript:" class="link-footer">Filets</a></li>
+								<li><a href="javascript:" class="link-footer">Frutos do Mar</a></li>
+								<li><a href="javascript:" class="link-footer">Em Postas</a></li>
+								<li><a href="javascript:" class="link-footer">Defumados</a></li>
+								<li><a href="javascript:" class="link-footer">Bacalhau</a></li>
+								<li><a href="javascript:" class="link-footer">Peixes Inteiros</a></li>
+							</ul>
+						</li>
+						<li class="<?php if(is_page(array( 'fale-conosco', 'trabalhe-conosco' ))){ echo 'active'; } ?>">
+							<a href="<?php echo get_home_url(); ?>/fale-conosco">Fale Conosco <i class="fa fa-sort-desc"></i></a>
+							<ul>
+								<li><a href="<?php echo get_home_url(); ?>/trabalhe-conosco">Trabalhe Conosco</a></li>
+							</ul>
+						</li>
 					</ul>
+
+					<div class="redes">
+						<a href="javascript:"><i class="fa fa-facebook"></i></a>
+						<a href="javascript:"><i class="fa fa-instagram"></i></a>
+					</div>
 				</nav>
 			</div>
 

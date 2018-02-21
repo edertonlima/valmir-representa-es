@@ -45,30 +45,62 @@ textarea {
 }
 
 button, input[type='submit'], .btn {
+	font-family: $raleway;
 	width: auto;
-	height: 50px;
-	line-height: 50px;
+	height: 45px;
+	line-height: 45px;
 	padding: 0 35px;
-	color: $azul-escuro;
-	font-weight: $bold;
-	font-size: 1.225rem;
+	color: #000;
+	font-weight: $bold-extra;
+	font-size: .875rem;
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
 	background-color: #ffffff;
-	border: 1px solid $azul-escuro;
 	cursor: pointer;
 	text-transform: uppercase;
-	border-radius: 5px;
+	border-radius: 2px;
+	text-shadow: 0 1px rgba(0,0,0,0.16);
+	white-space: nowrap;
+	letter-spacing: 1px;
+
 	@include animacao;
 
 	.fa {
 		font-size: 1.187rem;
 		color: #ffffff;
-	}	
+	}
 
-	&:hover {
-		background-color: darken($vermelho, 10%);
+	&.btn-slide {
+		margin-top: 10px;
+		background-color: $azul;
+		color: #ffffff;
+
+		&:hover {
+			background-color: darken($azul, 10%);
+		}
+	}
+
+	&.inline {
+		height: auto;
+		line-height: normal;
+	}
+
+	&.btn-info-slide {
+		margin: 0 auto;
+		display: block;
+		font-size: .7rem;
+		color: $vermelho;
+	}
+
+	&.btn-saiba-mais {
+		margin: 30px 0 0;
+		background-color: $vermelho;
+		color: #ffffff;
+
+		&:hover {
+			background-color: darken($vermelho, 10%);
+		}
 	}
 }
 

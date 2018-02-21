@@ -22,14 +22,45 @@
 }
 
 .footer {
-	background-color: darken($cinza-escuro,10%);
+	background-color: $azul-escuro;
 	width: 100%;
 	float: left;
+	padding: 50px 0 0;
+
+	p {
+		color: #ffffff;
+	}
 
 	h3 {
-		color: $amarelo;
-		font-size: 1rem;
+		font-size: 1.225rem;
 		margin-bottom: 15px;
+		color: #fff;
+		margin-top: 30px;
+	}
+
+	.link-footer {
+		padding: 2px 0;
+		color: #ffffff;
+		float: left;
+		@include clear;
+		@include animacao;
+
+		i {
+			color: #ffffff;
+			font-size: .5rem;
+			position: relative;
+			top: -2px;
+			margin-right: 10px;
+			@include animacao;
+		}
+
+		&:hover {
+			color: $vermelho;
+
+			i {
+				color: $vermelho;
+			}
+		}
 	}
 
 	.menu-footer {
@@ -51,17 +82,16 @@
 
 	.copy {
 		width: 100%;
-		float: left;
-		position: relative;
-		margin: 40px 0 20px;
 		@include box-sizing;
+		background-color: darken($azul-escuro,5%);
+		padding: 10px 0;
+		margin-top: 50px;
 
 		p {
-			display: block;
-			text-align: left;
+			float: left;
 			font-size: .675rem;
-			color: $cinza;
-			opacity: .8;
+			color: #ffffff;
+			margin: 8px 0 0;
 
 			i {
 				font-size: .675rem;
@@ -128,70 +158,56 @@
 			}
 		}
 	}
-}
 
-.contato-footer {
-	span {
-		color: #ffffff;
-		font-size: 1rem;
-		display: block;
+	img {
+		width: 200px;
+	}
 
-		&.tel {
-			font-size: 1rem;
+	.info-header {
+		height: auto;
+		background-color: transparent;
+		text-align: left;
 
-			i {
-				font-size: 1rem;
+		.item-info-header {
+			margin: 0 0 20px;
+			padding: 0;
+			border: 0;
+			float: left;
+			width: 50%;
+
+			&.escreva {
+				width: 100%;
 			}
-		}
-	}
 
-	h4 {
-		margin-top: 20px;
-		color: #ffffff;
-		margin-bottom: 5px;
-	}
+			&:last-child {
+				margin-bottom: 0;
+			}
 
-	p {
-		color: #ffffff;
-	}
-
-	&.page {
-		//padding-left: 50px;
-		overflow: hidden;
-		margin-bottom: 20px;
-		margin-top: 20px;
-		
-		span, h4, p {
-			color: $cor-txt;
-		}
-
-		h4 {
-			margin-top: 0;
+			.title, .subtitle {
+				color: #ffffff;
+			}
 		}
 	}
 }
 
 
 	.redes {
-		float: left;
+		float: right;
 		width: auto;
-		margin-top: 20px;
+		margin-top: 7px;
 
 		a {
+			margin: 0 5px;
 			i {
 				color: #ffffff;
-				font-size: 2rem;
+				font-size: 1.5rem;
+				@include animacao;
 			}
 
 			&:hover {
 				i {
-					color: $amarelo;
+					color: $vermelho;
 				}
 			}
 		}
 	}
-
-
-.maps-filiais-footer {
-	
-}

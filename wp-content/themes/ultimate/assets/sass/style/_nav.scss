@@ -19,21 +19,55 @@
 		height: 60px;
 		@include clear;
 	}
+
+	.redes {
+		float: right;
+		margin: 0;
+		line-height: 60px;
+
+		a {
+			padding: 5px;
+			margin: 0 2.5px;
+			position: relative;
+			top: 3px;
+			@include animacao;
+
+			i {
+				font-size: 1.5rem;
+			}
+
+			&:hover {
+				i {
+					color: $vermelho;
+				}
+			}
+		}
+	}
 }
 
 .main-navigation {
-	padding-left: 40px;
+	padding-left: 40px; 
 	height: 100%;
+	display: inline-block;
 
-	li {
+	> li {
 		display: inline-block;
 		position: relative;
 		height: 100%;
 
-		a {
+		> a {
 			color: #ffffff;
 			padding: 18px 20px;
 			display: block;
+			@include animacao;
+
+			i {
+				color: #fff;
+				font-size: .75rem;
+				top: -3px;
+				position: relative;
+				margin-left: 3px;
+			}
 
 			&:before {
 				position: absolute;
@@ -41,22 +75,29 @@
 				width: 4px;
 				height: 4px;
 				right: -2px;
-				top: calc(50% - 2px);
+				top: 26px;
 				border-radius: 50%;
-				background: rgba(250,250,250,0.2);
-			}	
+				background: rgba(#ffffff,0.2);
+			}
+
+			&:after {
+				position: relative;
+				content: "";
+				width: 0px;
+				height: 5px;
+				left: 0;
+				bottom: -17px;
+				background-color: #e21f2f;
+				display: block;
+				margin: 0 auto;
+				@include animacao;
+			}
 		}
 
-		&.active {
+		&.active, &:hover {
 			a {
 				&:after {
-					position: absolute;
-					content: "";
-					width: calc(100% - 30px);
-					height: 5px;
-					left: 15px;
-					bottom: 0;
-					background-color: #e21f2f;
+					width: 100%;
 				}
 			}
 		}
@@ -68,8 +109,46 @@
 				}
 			}
 		}
+
+		ul {
+			display: none;
+			position: absolute;
+			z-index: 999;
+			background: #fff;
+			width: 240px;
+			left: 10px;
+			@include animacao;
+
+			li {
+				display: block;
+				border-bottom: 1px solid $cinza;
+				line-height: 45px;
+				font-color: $cor-txt;
+				padding: 0 20px;
+
+				a {
+					font-size: .9rem;
+					font-weight: $bold;
+
+					&:hover {
+						color: $azul-escuro;
+					}
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		&:hover {
+			ul {
+				display: block;
+			}
+		}
 	}
 }
+
 
 .nav {
 	width: auto;

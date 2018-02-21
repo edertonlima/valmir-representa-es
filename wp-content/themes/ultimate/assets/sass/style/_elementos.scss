@@ -53,95 +53,37 @@ h1 {
 }
 
 h2 {
-	font-size: 1.125rem;
-	font-weight: $bold;
+	font-famyli: $raleway;
+	font-weight: $bold-extra;
 	display: block;
-	color: $cinza-escuro;
-	padding-bottom: 10px;
-	border-bottom: 2px solid $cinza;
-	position: relative;
+	line-height: 3rem;
+	font-size: 3rem;
 	text-transform: uppercase;
-
-	&.tit-area {
-		margin-bottom: 30px;
-	}
-
-	&.sub-titulo {
-		margin: 50px 0 30px;
-	}
-
-	a {
-		color: $cinza-escuro;
-
-		&:hover {
-			color: $amarelo;
-
-			i {
-				color: $amarelo;
-			}
-		}
-	}
-
-	span {
-		color: $amarelo;
-		font-size: .75rem;
-		position: relative;
-		top: -2px;
-
-		i {
-			color: darken($cinza, 10%);
-			position: relative;
-			font-size: 1rem !important;
-			padding: 0 10px 0 8px;
-			top: 1px;
-		}
-
-		div {
-			display: inline-block;
-			color: $cinza-escuro;
-		}
-	}
-
-	.logOff {
-		float: right;	
-
-		color: $cinza-escuro;
-		font-size: .75rem;
-		position: relative;
-		top: -2px;
-
-		i {
-			color: $cinza-escuro;
-			position: relative;
-			font-size: 1rem !important;
-			padding: 0 10px 0 8px;
-			top: 1px;
-		}
-	}
-
-	&:after {
-		content: '';
-		height: 2px;
-		background-color: $cinza-escuro;
-		width: 80px;
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-	}
-
-	&.no-border-active {
-		&:after {
-			display: none;
-		}
-	}
 }
 
 h3 {
-	font-size: 1.75rem;
-	font-weight: $bold;
+	font-famyli: $raleway;
+	font-size: 1rem;
+	font-weight: $bold-extra;
 	display: block;
-	color: $cinza-escuro;
-	margin: 50px 0 30px;
+	color: $azul-escuro;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+ 
+	&.titulo {
+		font-size: 2.8rem;
+		line-height: 2.8rem;
+		text-align: center;
+
+		&:before {
+			content: '';
+			background-color: $vermelho;
+			height: 2px;
+			width: 10%;
+			display: block;
+			margin: 0 auto 20px;
+		}
+	}
 }
 
 h4 {
@@ -177,13 +119,21 @@ p {
 		margin-bottom: 0px;
 	}
 
+	&.subtitulo {
+		color: $azul-escuro;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.125rem;
+		margin: -5px 0 50px;
+	}
+
 	&.mini {
 		font-size: 1rem;
 		line-height: 1.25rem;
 	}
 
 	&.justify {
-		text-align: justify-center;
+		text-align: justify;
 	}
 
 	&.center {
@@ -231,6 +181,23 @@ a {
 
 .table-responsive {
 	
+}
+
+.margin-top-40 {
+	margin-top: 40px;
+}
+
+.margin-top-60 {
+	margin-top: 60px;
+}
+
+.margin-60 {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.margin-top-80 {
+	margin-top: 80px;
 }
 
 table {

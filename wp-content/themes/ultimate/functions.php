@@ -139,8 +139,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Filiais',
-		'menu_title'	=> 'Filiais',
+		'page_title' 	=> 'SEO',
+		'menu_title'	=> 'SEO',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 }

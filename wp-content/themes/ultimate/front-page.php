@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <!-- slide -->
-<section class="box-content box-slide" style="display: none;">
-	<div class="container">
+<section class="box-content box-slide">
+
 		<div class="slide">
-			<div class="carousel slide" data-ride="carousel" data-interval="6000" id="slide">
+			<div class="carousel slide" data-ride="carousel" data-interval="60000" id="slide">
 
 				<div class="carousel-inner" role="listbox">
 
@@ -16,9 +16,27 @@
 								$slide = $slide+1; ?>
 
 								<div class="item <?php if($slide == 1){ echo 'active'; } ?>" style="background-image: url('<?php the_sub_field('imagem'); ?>');">
-									<h2><?php the_sub_field('titulo'); ?></h2>
-									<p><?php the_sub_field('texto'); ?></p>
-									<a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('titulo_url'); ?></a>
+									<div class="mask-slide">
+										<div class="container">
+											<div class="container-slide">
+											
+												<h2><?php the_sub_field('titulo'); ?></h2>
+												<p><?php the_sub_field('texto'); ?></p>
+												<?php if(get_sub_field('url')){ ?>
+													<a class="btn btn-slide" href="<?php the_sub_field('url'); ?>">
+
+														<?php if(get_sub_field('titulo_url')){ 
+															the_sub_field('titulo_url');
+														}else{
+															echo 'saiba mais';
+														} ?>
+															
+													</a>
+												<?php } ?>
+
+											</div>
+										</div>
+									</div>
 								</div>
 
 							<?php }
@@ -38,6 +56,78 @@
 
 			</div>
 		</div>
+
+</section>
+
+<section class="box-content no-padding-top box-info-slide">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-3">
+				<div class="box-item">
+					<div class="container-item">
+						<h3 class="center">Nossa Estrutura</h3>
+						<p class="center">Do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<a href="javascript:" class="btn btn-info-slide inline">Saiba mais</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="box-item">
+					<div class="container-item">
+						<h3 class="center">Logistica</h3>
+						<p class="center">Do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<a href="javascript:" class="btn btn-info-slide inline">Saiba mais</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="box-item">
+					<div class="container-item">
+						<h3 class="center">Área de Atuação</h3>
+						<p class="center">Do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<a href="javascript:" class="btn btn-info-slide inline">Saiba mais</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="box-item">
+					<div class="container-item">
+						<h3 class="center">Onde Comprar</h3>
+						<p class="center">Do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<a href="javascript:" class="btn btn-info-slide inline">Saiba mais</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="box-content no-padding-top">
+	<div class="container">
+
+		<h3 class="titulo"><?php echo get_the_title(get_page_by_path('quem-somos')->ID); ?></h3>
+		<p class="subtitulo"><?php the_field('subtitulo',get_page_by_path('quem-somos')->ID); ?></p>
+
+		<div class="row">
+			<div class="col-6">
+				<img src="http://localhost/valdeir-representacoes/wp-content/uploads/2018/02/importacoes1.jpg">
+			</div>
+			<div class="col-6">
+				<p>Aliquam non dui enim. Nam vel arcu nec nibh aliquam vulputate. Donec porttitor neque sed enim ultrices iaculis!<br><br>In quis luctus dolor. Sed ac libero arcu. Phasellus vulputate ultrices augue, eget feugiat lectus efficitur in. Nulla non pharetra justo. Nunc viverra consectetur bibendum. Sed consectetur leo vel quam consequat, eu aliquam enim dapibus. Nunc pulvinar accumsan sapien</p>
+				<ul>
+					<li>- Duis ut nisi feugiat elit pharetra</li>
+					<li>- Dapibus nunc convallis arcu</li>
+					<li>- Congue velit pellentesque facilisis</li>
+				</ul>
+				<a href="<?php echo get_home_url(); ?>/quem-somos" class="btn btn-saiba-mais">Saiba mais</a>
+			</div>
+		</div>
+
 	</div>
 </section>
 
