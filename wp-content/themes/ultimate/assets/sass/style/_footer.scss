@@ -55,10 +55,10 @@
 		}
 
 		&:hover {
-			color: $vermelho;
+			color: $laranja;
 
 			i {
-				color: $vermelho;
+				color: $laranja;
 			}
 		}
 	}
@@ -83,7 +83,7 @@
 	.copy {
 		width: 100%;
 		@include box-sizing;
-		background-color: darken($azul-escuro,5%);
+		background-color: $laranja;
 		padding: 10px 0;
 		margin-top: 50px;
 
@@ -162,8 +162,9 @@
 	img {
 		width: 200px;
 	}
+}
 
-	.info-header {
+	.info-contato {
 		height: auto;
 		background-color: transparent;
 		text-align: left;
@@ -187,8 +188,14 @@
 				color: #ffffff;
 			}
 		}
+
+		&.form-contato {
+			margin-top: 115px;
+			.title, .subtitle {
+				color: $cor-txt;
+			}
+		}
 	}
-}
 
 
 	.redes {
@@ -206,7 +213,7 @@
 
 			&:hover {
 				i {
-					color: $vermelho;
+					color: $laranja;
 				}
 			}
 		}

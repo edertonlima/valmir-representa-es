@@ -319,17 +319,39 @@
 
 							</ul>
 						</li>
-						<li class="">
+						<li class="<?php if((is_post_type_archive('produtos')) or (is_tag()) or (is_tax('produtos_taxonomy')) or (is_singular('produtos'))){ echo 'active'; } ?>">
 							<a href="<?php echo get_home_url(); ?>/produtos">Produtos <i class="fa fa-sort-desc"></i></a>
 							<ul>
-								<li><a href="javascript:" class="link-footer">Pescados Nacionais</a></li>
+								<?php
+									$args = array(
+									    'taxonomy'      => 'produtos_taxonomy',
+									    'parent'        => 0,
+									    'orderby'       => 'name',
+									    'order'         => 'ASC',
+									    'hierarchical'  => 1,
+									    'pad_counts'    => true,
+									    'hide_empty'    => 0
+									);
+									$categories = get_categories( $args );
+									foreach ( $categories as $categoria ){ ?>
+
+										<li class="<?php if($categoria->term_id == $categoria_id){ echo 'active'; } ?>">
+											<a href="<?php echo get_term_link($categoria->term_id); ?>" title="<?php echo $categoria->name; ?>">
+												<?php echo $categoria->name; ?>
+											</a>
+										</li>
+
+										<?php
+									}
+								?>
+								<?php /*<li><a href="javascript:" class="link-footer">Pescados Nacionais</a></li>
 								<li><a href="javascript:" class="link-footer">Pescados Importados</a></li>
 								<li><a href="javascript:" class="link-footer">Filets</a></li>
 								<li><a href="javascript:" class="link-footer">Frutos do Mar</a></li>
 								<li><a href="javascript:" class="link-footer">Em Postas</a></li>
 								<li><a href="javascript:" class="link-footer">Defumados</a></li>
 								<li><a href="javascript:" class="link-footer">Bacalhau</a></li>
-								<li><a href="javascript:" class="link-footer">Peixes Inteiros</a></li>
+								<li><a href="javascript:" class="link-footer">Peixes Inteiros</a></li>*/ ?>
 							</ul>
 						</li>
 						<li class="<?php if(is_page(array( 'fale-conosco', 'trabalhe-conosco' ))){ echo 'active'; } ?>">

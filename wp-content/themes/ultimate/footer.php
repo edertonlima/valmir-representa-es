@@ -9,7 +9,7 @@
 				</a>
 				<p>Ut enim ad minim veniam, quis nostrud cittion ullamco laboris nisi ut aliquip cosquat uis aute irure dolor.</p>
 
-				<div class="info-header">
+				<div class="info-header info-contato">
 					<div class="item-info-header">
 						<i class="fa  fa-headphones"></i>
 						<span class="title">Fale Conosco</span>
@@ -64,14 +64,24 @@
 
 			<div class="col-3 categorias-produtos">
 				<h3>PRODUTOS</h3>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Pescados Nacionais</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Pescados Importados</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Filets</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Frutos do Mar</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Em Postas</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Defumados</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Bacalhau</a>
-				<a href="javascript:" class="link-footer"><i class="icons fa fa-circle"></i>Peixes Inteiros</a>
+				<?php
+					$args = array(
+					    'taxonomy'      => 'produtos_taxonomy',
+					    'parent'        => 0,
+					    'orderby'       => 'name',
+					    'order'         => 'ASC',
+					    'hierarchical'  => 1,
+					    'pad_counts'    => true,
+					    'hide_empty'    => 0
+					);
+					$categories = get_categories( $args );
+					foreach ( $categories as $categoria ){ ?>
+							<a href="<?php echo get_term_link($categoria->term_id); ?>" class="link-footer" title="<?php echo $categoria->name; ?>">
+								<i class="icons fa fa-circle"></i> <?php echo $categoria->name; ?>
+							</a>
+						<?php
+					}
+				?>
 			</div>
 		</div>
 	</div>

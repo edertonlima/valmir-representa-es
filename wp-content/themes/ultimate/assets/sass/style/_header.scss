@@ -1,9 +1,12 @@
 .top-header {
+	float: left;
 	width: 100%;
-	height: 36px;
-	line-height: 36px;
+	height: 40px;
+	line-height: 40px;
 	background-color: $cinza-claro;
 	border-bottom: 1px solid $cinza;
+	border-top: 4px solid $laranja;
+	@include clear;
 
 	.menu-top-menu {
 		float: right;
@@ -13,23 +16,28 @@
 			padding: 0 5px;
 			margin: 0 10px;
 			font-size: .75rem;
+			color: $cinza-escuro;
 
 			&:hover {
-				color: $cinza-escuro;
+				color: $laranja;
 			}
 		}
 	}
 }
 
 .header {
+	width: 100%;
+	float: left;
+	
 	background-color: $azul-escuro;
 	position: relative;
+	@include clear;
 
 	&::before, &::after {
 		content: "";
 		position: absolute;
 		top: 0;
-		width: calc(50% - #{($width/2)-$padding-container});
+		width: calc(50% - #{(($width/2)-$padding-container)-10px});
 		background-color: #ffffff;
 		bottom: 0px;
 	}
@@ -64,7 +72,7 @@
 		}
 
 		i {
-			color: $vermelho
+			color: $laranja
 		}
 
 		span {
@@ -72,7 +80,7 @@
 		}
 
 		.title {
-			color: $cor-txt;
+			color: $laranja;
 		}
 
 		.subtitle {
@@ -86,6 +94,7 @@
 .main-title {
 	background-color: $cinza;
 	padding: 50px 0;
+	@include clear;
 
 	.titulo, .subtitulo {
 		
@@ -107,5 +116,26 @@
 		text-transform: none;
 		margin: 0;
 		font-size: 1rem;
+	}
+
+	.categoria {
+		margin-bottom: 10px;
+		display: block;
+		text-transform: uppercase;
+		color: $laranja;
+
+		a {
+			color: $laranja;
+			@include animacao;
+
+			&:hover {
+				color: $cinza-escuro;
+			}
+		}
+
+		i {
+			color: $laranja;
+			margin: 0 5px;
+		}
 	}
 }

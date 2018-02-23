@@ -62,11 +62,11 @@ h2 {
 }
 
 h3 {
-	font-famyli: $raleway;
+	family: $raleway;
 	font-size: 1rem;
 	font-weight: $bold-extra;
 	display: block;
-	color: $azul-escuro;
+	color: $cinza-escuro;
 	text-transform: uppercase;
 	margin-bottom: 10px;
  
@@ -77,7 +77,7 @@ h3 {
 
 		&:before {
 			content: '';
-			background-color: $vermelho;
+			background-color: $laranja;
 			height: 2px;
 			width: 10%;
 			display: block;
@@ -87,10 +87,10 @@ h3 {
 }
 
 h4 {
+	color: $cinza-escuro;
 	font-size: 1rem;
 	line-height: 1.225rem;
 	font-weight: $bold;
-	color: $cinza-escuro;
 }
 
 h5 {
@@ -279,12 +279,12 @@ table {
 						font-size: 1.25rem;
 						top: 3px;
 						position: relative;
-						color: $vermelho;
+						color: $laranja;
 					}
 
 					&:hover {
 						i {
-							color: darken($vermelho,10%);
+							color: darken($laranja,10%);
 						}
 					}
 				}

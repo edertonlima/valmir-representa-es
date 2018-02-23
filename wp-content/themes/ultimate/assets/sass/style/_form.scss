@@ -73,11 +73,39 @@ button, input[type='submit'], .btn {
 
 	&.btn-slide {
 		margin-top: 10px;
-		background-color: $azul;
+		background-color: $laranja;
 		color: #ffffff;
 
 		&:hover {
-			background-color: darken($azul, 10%);
+			background-color: darken($laranja, 10%);
+		}
+	}
+
+	&.btn-produto {
+		float: left;
+		padding: 0;
+		background-color: $laranja;
+		color: #ffffff;
+
+		&:hover {
+			background-color: darken($laranja, 10%);
+		}
+	}
+
+	&.btn-orcamento {
+		width: calc(100% - 50px);
+		border-radius: 2px 0px 0px 2px;
+		font-size: .7rem;
+	}
+
+	&.btn-more {
+		border-radius: 0px 2px 2px 0px;
+		width: 50px;
+		background-color: lighten($laranja, 10%);
+
+		i {
+			font-size: 1.5rem;
+			line-height: 42px;
 		}
 	}
 
@@ -90,16 +118,16 @@ button, input[type='submit'], .btn {
 		margin: 0 auto;
 		display: block;
 		font-size: .7rem;
-		color: $vermelho;
+		color: $laranja;
 	}
 
 	&.btn-saiba-mais {
 		margin: 30px 0 0;
-		background-color: $vermelho;
+		background-color: $laranja;
 		color: #ffffff;
 
 		&:hover {
-			background-color: darken($vermelho, 10%);
+			background-color: darken($laranja, 10%);
 		}
 	}
 }
@@ -158,6 +186,7 @@ form {
 
 	&.form-padrao {
 		width: 100%;
+		margin-top: 50px;
 	}
 
 	input, textarea {
@@ -169,7 +198,7 @@ fieldset {
 	margin-top: 10px;
 
 	.info-campo {
-		color: $vermelho;
+		color: $laranja;
 		margin-bottom: 10px;
 	}
 
@@ -183,22 +212,22 @@ fieldset {
 
 	&.erro {
 		input, textarea {
-			border-color: $vermelho;
+			border-color: $laranja;
 
 			&::-webkit-input-placeholder {
-				color: $vermelho;
+				color: $laranja;
 			}
 
 			&:-moz-placeholder {
-				color: $vermelho; 
+				color: $laranja; 
 			}
 
 			&::-moz-placeholder {
-				color: $vermelho;
+				color: $laranja;
 			}
 
 			&:-ms-input-placeholder {  
-				color: $vermelho;
+				color: $laranja;
 			}
 		}
 	}
@@ -243,8 +272,7 @@ fieldset {
 }
 
 .msg-form {
-	text-align: center;
 	font-size: 1rem;
-	margin: 0px 0 20px !important;
-	color: $vermelho;
+	margin: 20px 0 20px !important;
+	color: $laranja;
 }
